@@ -26,7 +26,7 @@ def send_reply(api: tweepy.API, fileName: str, userName="Xeralya" ):
         if not tweetAlreadyAnswered:
             try:
                 # api.update_status(status=msgToSend, in_reply_to_status_id=tweet.id, auto_populate_reply_metadata=True)
-                api.update_status_with_media(filename=imgPath, status=msgToSend, in_reply_to_status_id=tweet.id)
+                api.update_status_with_media(filename=imgPath, status=msgToSend, in_reply_to_status_id=tweet.id, auto_populate_reply_metadata=True)
                 print("Tweeted !")
             except tweepy.errors.TweepyException as e:
                 print(e)
